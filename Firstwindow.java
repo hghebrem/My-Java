@@ -15,7 +15,7 @@ public class Firstwindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	
+	/// 2nd Com 
 	
 	
 public Firstwindow() {
