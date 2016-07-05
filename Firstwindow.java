@@ -1,15 +1,26 @@
+
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+
+//import java.awt.*; Little did i know, these two imports can be used to import all the above imports....the astrc (*) lets you import everything in that library
+
+//import javax.swing.*;
+
 
 public class Firstwindow extends JFrame {
 
@@ -27,11 +38,24 @@ public Firstwindow() {
 
 	JPanel p = new JPanel();  // These are panels
 	JPanel p2 = new JPanel();
-	JPanel p3 = new JPanel(new GridBagLayout()); // instead of having a defualt constractor now we are alowing this JPanel to have access to the GridBagConstraint we created but we have not implemented, you implement it by when we are adding the individual components to a panel
+	JPanel p3 = new JPanel(new GridBagLayout()); // instead of having a defualt constractor now we are allowing this JPanel to have access to the GridBagConstraint we created but we have not implemented, you implement it by when we are adding the individual components to a panel
 	
 	
 	JButton b = new JButton("Button 1");	
 	JButton d = new JButton("Button 2");
+	
+	d.addActionListener(new ActionListener() {
+		
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+		
+			JOptionPane.showMessageDialog(null,"well done btw this is the Message parameter"+ e); // if you get rid of e u get just the message ....lesson 34
+			
+		}
+
+		
+	});
 	
 	JCheckBox cb = new JCheckBox("Whatsup,This is a Check Box");	
 	JCheckBox cb2 = new JCheckBox("Not much");
@@ -42,7 +66,7 @@ public Firstwindow() {
 	
 	
 	GridBagConstraints gbc = new GridBagConstraints();  // Helps us organize a panel (with spacing, orientation etc)
-	gbc.insets = new Insets(15,15,15,15);
+	gbc.insets = new Insets(15,15,15,15);  // *insets is spacing
 	
 	
 	p.add(d);  // So here we added both our button to the panel.
